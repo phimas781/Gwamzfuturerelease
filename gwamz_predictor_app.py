@@ -1,3 +1,19 @@
+import sys
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+try:
+    # Your existing imports here
+    import streamlit as st
+    import pandas as pd
+    # ... rest of your imports ...
+except ImportError as e:
+    logger.error(f"Import error: {e}")
+    st.error(f"Required packages not found. Please install with: pip install -r requirements.txt")
+    st.stop()
 import streamlit as st
 import pandas as pd
 import numpy as np
